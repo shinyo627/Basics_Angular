@@ -2,7 +2,9 @@
 <input type="text" (keyup)="changeImage($event)" [value]="imgURL" />
 
 <!-- app-post is already registered in the angular module system -->
-<app-post [postImg]="imgURL"></app-post>
+<app-post [img]="imgURL" (imgSelected)="logImg($event)">
+  <p>Some caption</p>
+</app-post>
 
 <p>Hello {{ name.toUpperCase() }}Angular!</p>
 <p>Hello {{ getName() }}!</p>
