@@ -16,4 +16,11 @@ import { Component } from '@angular/core';
   styleUrls: [`./app.component.css`],
   // styles: [``]
 })
-export class AppComponent {}
+export class AppComponent {
+  name = 'Yoz';
+  imageURL = `https://picsum.photos/id/237/500/500`;
+
+  getName() {
+    return this.name;
+  }
+}
