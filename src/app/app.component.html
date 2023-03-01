@@ -6,6 +6,17 @@
   <p>Some caption</p>
 </app-post>
 
-<p>Hello {{ name.toUpperCase() }}Angular!</p>
+<p>Hello {{ name | titlecase }} Angular!</p>
 <p>Hello {{ getName() }}!</p>
 <p>{{ 15 + 13 }}</p>
+
+<p>Today's date is: {{ currentDate | date : "YYYY MMMM d" }}</p>
+<p>{{ cost | currency : "KRW" }}</p>
+<!-- The number class with 1.2-5 param means...
+one whole digit with min 2 floating number(decimal)
+ to max 5 decimal -->
+<!-- <p>{{ temperature | number : "1.2-5" }}</p> -->
+<p>{{ temperature | number : "1.0-0" }}</p>
+
+<!-- Json pipe helps debugging -->
+<pre>{{ pizza | json }}</pre>
