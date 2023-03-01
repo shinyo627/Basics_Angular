@@ -1,0 +1,10 @@
+img {
+  width: 200px;
+  height: 200px;
+}
+
+/* apply style to the respective component tag wrapped around
+the template */
+:host {
+  font-size: 24px;
+}
