@@ -1,5 +1,8 @@
-<!-- property binding -->
-<img [src]="imageURL" alt="" />
+<!-- event binding and property-->
+<input type="text" (keyup)="changeImage($event)" [value]="imgURL" />
+
+<!-- app-post is already registered in the angular module system -->
+<app-post [postImg]="imgURL"></app-post>
 
 <p>Hello {{ name.toUpperCase() }}Angular!</p>
 <p>Hello {{ getName() }}!</p>
