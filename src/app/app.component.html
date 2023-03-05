@@ -1,3 +1,13 @@
+<!-- Binding a directive values are not interpreted as expression 
+it allows us to bind a value to property in our class -->
+<button
+  (click)="blueClass = !blueClass"
+  [ngClass]="{ blue: blueClass }"
+  [ngStyle]="{ 'font-size.px': fontSize }"
+>
+  Style Change
+</button>
+
 <!-- event binding and property-->
 <input type="text" (keyup)="changeImage($event)" [value]="imgURL" />
 
