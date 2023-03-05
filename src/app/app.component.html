@@ -1,3 +1,12 @@
+<!-- Structural Directives -->
+<ng-template [ngIf]="blueClass">
+  <p>Button is blue</p>
+</ng-template>
+<!-- Shorthand way of using Structural Directives <ng-template>.
+  '*' before ngIf doesn't need <ng-temple> and [] brackets around attribute-->
+<p *ngIf="blueClass">This is shorthand version for nfIf Button that is blue</p>
+
+<!-- Attribute Directives -->
 <!-- Binding a directive values are not interpreted as expression 
 it allows us to bind a value to property in our class -->
 <button
@@ -8,12 +17,19 @@ it allows us to bind a value to property in our class -->
   Style Change
 </button>
 
+<hr />
+
 <!-- event binding and property-->
 <input type="text" (keyup)="changeImage($event)" [value]="imgURL" />
 
 <!-- app-post is already registered in the angular module system -->
-<app-post [img]="imgURL" (imgSelected)="logImg($event)">
-  <p>Some caption</p>
+<!-- i is being assigned to index property of nfFor directives -->
+<app-post
+  *ngFor="let image of images; let i = index"
+  [img]="image"
+  (imgSelected)="logImg($event)"
+>
+  <p>{{ i }}. Some caption</p>
 </app-post>
 
 <p>Hello {{ name | titlecase }} Angular!</p>
